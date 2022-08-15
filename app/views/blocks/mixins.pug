@@ -1,0 +1,110 @@
+mixin menuLink(title, href="#")
+  li.header-menu-item
+    a.header-menu-link(href= href)= title
+
+mixin headerBottomItem(number, title, classHeader="")
+  .header-bottom-item(class= classHeader)
+      span.header-bottom-number= number
+      span.header-bottom-text= title
+
+mixin blockBox(caption, title, desc)
+  .block-box
+    h3.block-box-caption= caption
+    h2.block-box-heading= title
+    if desc
+      p.block-box-desc= desc
+
+mixin aboutItem(data)
+  .about-item
+    img.about-image(src= data.src alt= data.alt)
+    .about-content
+      i.about-icon(class= data.icon)
+      span.about-title= data.title
+
+mixin serviceItem(src, title, desc)
+  .service-item
+    img.service-item-icon(src= src)
+    .service-item-info
+      h3.service-item-title= title
+      p.service-item-desc= desc 
+
+mixin wedoItem(src,title, desc, classWedo= "")
+  .wedo-item(class= classWedo)
+    .wedo-item-header
+      img(src= src).wedo-item-icon
+      h3.wedo-item-title= title
+      i.fal.fa-angle-down.wedo-item-arrow
+    .wedo-item-content 
+      .wedo-item-text= desc
+
+mixin teamSocial(facebook= "#", twitter= "#", pinterest= "#", instagram= "#")
+  ul.team-social
+    li.team-social-item
+      a.team-social-link(href= facebook)
+        i.fab.fa-facebook-f
+    li.team-social-item
+      a.team-social-link(href= twitter)
+        i.fab.fa-twitter
+    li.team-social-item
+      a.team-social-link(href= pinterest)
+        i.fab.fa-pinterest
+    li.team-social-item
+      a.team-social-link(href= instagram)
+        i.fab.fa-instagram
+
+mixin teamItem(src ,name, position)
+  .team-item
+    .team-main
+      img(src= src).team-image
+      .team-content
+        if block
+          block
+    .team-info
+      h3.team-name= name
+      span.team-position= position
+
+mixin workItem(src= "./images/img-work1.png",className= "", title= "Creatively designed", desc= "Lorem ipsum dolor sit", icon="fa fa-home")
+  .work-item(class= className)
+    img.work-image(src= src)
+    .work-content
+      i.work-icon(class= icon)
+      h3.work-title= title
+      span.work-desc.text.text-light= desc
+
+mixin peopleItem(src= "../images/img-people1.png", name= "Matthew Dix", job= "Graphic design", desc= "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, quisquam vel officia cumque esse dolorum facilis veritatis voluptas ea magnam aliquid error quia incidunt modi assumenda autem officiis itaque enim." )
+  li.people-item
+    img.people-avatar(src= src)
+    .people-info
+      h3.people-name= name 
+      span.people-job.text.text-light= job 
+      p.people-desc.text.text-normal= desc
+
+mixin storyItem(src= "../images/img-blog1.png", dateNumber= "15", dateText= "Jan", title= "Lorem ipsum dolor sit amet consectetur adipisicing elit.", desc= "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, quisquam vel officia cumque esse dolorum facilis veritatis voluptas ea magnam aliquid error quia incidunt modi assumenda autem officiis itaque enim.", views= 1000, comments= 100)
+  li.story-item
+    .story-meida
+      img.story-image(src= src)
+      .story-date
+        span.story-date-number= dateNumber
+        span.story-date-text.text.text-light= dateText
+    h3.story-title= title 
+    .story-desc.text 
+      p.story-desc-inner.text-normal= desc
+    .story-meta
+      .story-meta-item
+        i.fa.fa-eye.story-meta-icon
+        span.story-meta-number.text= views 
+      .story-meta-item
+        i.fa.fa-comment.story-meta-icon
+        span.story-meta-number.text= comments
+
+mixin quoteItem(src= "../images/img-quote.png", type= false, desc= '"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, quisquam vel officia cumque esse dolorum facilis veritatis voluptas ea magnam aliquid error quia incidunt modi assumenda autem officiis itaque enim."',author= "Jon Doe")
+  .quote-item
+    if type == false
+      .quote-icon
+        img(src= src)
+    else
+      img(src= "../images/img-quote-avatar.png").quote-image
+    .quote-info
+      p.quote-desc= desc 
+      span.quote-author= author 
+

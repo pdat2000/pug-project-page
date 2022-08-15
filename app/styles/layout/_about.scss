@@ -1,0 +1,54 @@
+.about {
+  padding-top: 9.3rem;
+  padding-bottom: 11rem;
+  background-color: #fff;
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -3rem;
+  }
+  &-item {
+    margin-left: 3rem;
+    width: calc(33.333% - 3rem);
+  }
+  &-content {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2rem;
+  }
+  &-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  &-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    @include textClamp;
+    @include color(
+      (
+        color: white,
+      )
+    );
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &-list {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      @include hideScroll;
+      padding: 1rem;
+      margin-left: -2.5rem;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+    }
+    &-item {
+      scroll-snap-align: center;
+      margin-left: 2.5rem;
+      min-width: 80%;
+    }
+  }
+}
+@include hoverEffect(".about-item", ".about-content");
